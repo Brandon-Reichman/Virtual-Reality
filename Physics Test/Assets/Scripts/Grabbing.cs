@@ -12,13 +12,10 @@ public class Grabbing : MonoBehaviour {
     private GameObject grabbedObject;
     private bool grabbing;
     private Quaternion lastRotation, currentRotation;
-    private Vector3 startScale;
     public GameObject ball;
+    public GameObject parentObj;
+    private Vector3 startSize;
 
-    void Start()
-    {
-        startScale = ball.transform.localScale;
-    }
     void GrabObject()
     {
         grabbing = true;
@@ -34,9 +31,8 @@ public class Grabbing : MonoBehaviour {
             }
             
             grabbedObject = hits[closestHit].transform.gameObject;
-            grabbedObject.transform.localScale = startScale;
             grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
-            grabbedObject.transform.parent = transform;
+            grabbedObject.transform.parent = parentObj.transform;
             
             
 
@@ -53,7 +49,6 @@ public class Grabbing : MonoBehaviour {
             grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
             grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(controller);
             grabbedObject.GetComponent<Rigidbody>().angularVelocity = GetAngularVelocity();
-            grabbedObject.transform.localScale = startScale;
             grabbedObject = null;
         }
     }
