@@ -29,7 +29,7 @@ public class Reset : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (OVRInput.Get(OVRInput.Button.One)) ResetBall();
+        if (OVRInput.Get(OVRInput.RawButton.A)) ResetBall();
 		
 	}
 }

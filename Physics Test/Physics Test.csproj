@@ -103,6 +103,7 @@
     <Compile Include="Assets\OVR\Scripts\Util\OVRSceneSampleController.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRWaitCursor.cs" />
+    <Compile Include="Assets\Scripts\Collisions.cs" />
     <Compile Include="Assets\Scripts\Grabbing.cs" />
     <Compile Include="Assets\Scripts\Reset.cs" />
   </ItemGroup>
