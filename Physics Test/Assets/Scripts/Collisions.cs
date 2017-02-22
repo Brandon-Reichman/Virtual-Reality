@@ -10,8 +10,8 @@ public class Collisions : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-       if(col.gameObject.name=="Right Hand") GetComponent<Rigidbody>().AddForce(OVRInput.GetLocalControllerVelocity(RightController));
-        if (col.gameObject.name == "Left Hand") GetComponent<Rigidbody>().AddForce(OVRInput.GetLocalControllerVelocity(LeftController));
+       if(col.gameObject.name=="Right Hand") GetComponent<Rigidbody>().AddForce(OVRInput.GetLocalControllerVelocity(RightController)*100);
+        if (col.gameObject.name == "Left Hand") GetComponent<Rigidbody>().AddForce(OVRInput.GetLocalControllerVelocity(LeftController)*100);
     }
 
 }
